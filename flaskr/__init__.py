@@ -1,6 +1,11 @@
+import os
+from dotenv import load_dotenv
 from flask import Flask
+
+load_dotenv()
+
 app = Flask(__name__)
-app.config["SECRET_KEY"] = "jaist-go-dev-secret-9f3a7c1b8e2d"
+app.config["SECRET_KEY"] = os.environ["SECRET_KEY"]
 _flask_app = app
 import flaskr.auth
 import flaskr.app
